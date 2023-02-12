@@ -15,7 +15,7 @@ public class JavaQuestionRepository implements QuestionRepository {
     @PostConstruct
     private void init(){
         questions.add(new Question("есть прикурить?","неа"));
-        questions.add(new Question("а если найду?","ты мусорской чтоли , порядочных людей шмонать"));
+        questions.add(new Question("а если найду?","ты мусорской чтоли?  Порядочных людей шмонать"));
         questions.add(new Question("а ты за понятия чтоль","неа"));
         questions.add(new Question("а мобилка позвонить есть?","деньги закончились"));
         questions.add(new Question("пойдем пивас пить","гоу"));
