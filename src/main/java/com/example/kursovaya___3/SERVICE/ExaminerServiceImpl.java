@@ -8,11 +8,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ExaminerServicemImpl  implements ExaminerService {
+public class ExaminerServiceImpl implements ExaminerService {
     private final List<QuestionService> questionServices;
     private final UtilService utilService;
 
-    public  ExaminerServicemImpl(List<QuestionService> questionServices, UtilService utilService) {
+    public ExaminerServiceImpl(List<QuestionService> questionServices, UtilService utilService) {
         this.questionServices = questionServices;
         this.utilService = utilService;
     }
