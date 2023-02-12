@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Collection;
 
-public class ExamController {
+public class ExamController  {
     private final ExaminerService examinerService;
 
-    public ExamController(ExaminerService examinerService) {
+    public  ExamController(ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
 
     @GetMapping("/get/{amount}")
-    public Collection<Question> getQuestion(@PathVariable("amount") Integer amount) {
+    public Collection<Question>  getQuestion(@PathVariable("amount") Integer amount) {
         return examinerService.getQuestion(amount);
     }
 

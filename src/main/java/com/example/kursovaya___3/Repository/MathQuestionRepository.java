@@ -13,7 +13,7 @@ public class MathQuestionRepository implements QuestionRepository {
     private final Set<Question> questions = new HashSet<>();
 
     @PostConstruct
-    private void init() {
+    private void  init() {
         questions.add(new Question("есть прикурить?", "неа"));
         questions.add(new Question("а если найду?", "ты мусорской чтоли , порядочных людей шмонать"));
         questions.add(new Question("а ты за понятия чтоль", "неа"));
@@ -23,7 +23,7 @@ public class MathQuestionRepository implements QuestionRepository {
 
 
     @Override
-    public Question add(Question question) {
+    public Question  add(Question question) {
         if (question == null) {
             throw new BadRequestException("не может быть налл");
         }
@@ -32,7 +32,7 @@ public class MathQuestionRepository implements QuestionRepository {
     }
 
     @Override
-    public Question remove(Question question) {
+    public Question  remove(Question question) {
         if (!questions.contains(question)) {
             throw new NotFoundException("вопрос не найден");
         }
@@ -41,7 +41,7 @@ public class MathQuestionRepository implements QuestionRepository {
     }
 
     @Override
-    public Collection<Question> getAll() {
+    public Collection<Question>  getAll() {
         return questions;
     }
 }

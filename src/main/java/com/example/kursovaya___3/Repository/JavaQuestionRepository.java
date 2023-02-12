@@ -9,11 +9,11 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public class JavaQuestionRepository implements QuestionRepository {
+public class  JavaQuestionRepository implements QuestionRepository {
     private final Set<Question> questions = new HashSet<>();
 
     @PostConstruct
-    private void init(){
+    private void  init(){
         questions.add(new Question("есть прикурить?","неа"));
         questions.add(new Question("а если найду?","ты мусорской чтоли?  Порядочных людей шмонать"));
         questions.add(new Question("а ты за понятия чтоль","неа"));
@@ -23,7 +23,7 @@ public class JavaQuestionRepository implements QuestionRepository {
 
 
     @Override
-    public Question add(Question question) {
+    public Question  add(Question question) {
         if (question==null){
             throw new BadRequestException();
         }
@@ -32,7 +32,7 @@ public class JavaQuestionRepository implements QuestionRepository {
     }
 
     @Override
-    public Question remove(Question question) {
+    public Question  remove(Question question) {
         if (!questions.contains(question)){
             throw new NotFoundException("question not found");
         }
@@ -41,7 +41,7 @@ public class JavaQuestionRepository implements QuestionRepository {
     }
 
     @Override
-    public Collection<Question> getAll() {
+    public Collection<Question>  getAll() {
         return questions;
     }
 }
