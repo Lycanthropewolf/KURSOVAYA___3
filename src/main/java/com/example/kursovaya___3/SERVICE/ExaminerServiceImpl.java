@@ -8,17 +8,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ExaminerServicemImpl implements ExaminerService {
+public class ExaminerServiceImpl implements ExaminerService {
     private final List<QuestionService> questionServices;
     private final UtilService utilService;
 
-    public ExaminerServicemImpl(List<QuestionService> questionServices, UtilService utilService) {
+    public ExaminerServiceImpl(List<QuestionService> questionServices, UtilService utilService) {
         this.questionServices = questionServices;
         this.utilService = utilService;
     }
 
     @Override
-    public Collection<Question> getQuestion(int amount) {
+    public Collection<Question>  getQuestion(int amount) {
         if (amount <= 0 || calculateAmountOfQuestions() < amount) {
             throw new BadRequestException("incorrect amount");
         }
@@ -31,7 +31,7 @@ public class ExaminerServicemImpl implements ExaminerService {
         return result;
     }
 
-    private int calculateAmountOfQuestions() {
+    private int  calculateAmountOfQuestions() {
         return questionServices.stream().mapToInt(s -> s.getAll().size()).sum();
     }
 

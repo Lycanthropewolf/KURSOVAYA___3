@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Collection;
 
-public class JavaQuestionService implements QuestionService {
+public class JavaQuestionService  implements QuestionService {
     private final QuestionRepository questionRepository;
     private final UtilService utilService;
 
-    public JavaQuestionService(@Qualifier("javaQuestionRepository") QuestionRepository questionRepository, UtilService utilService) {
+    public  JavaQuestionService(@Qualifier("javaQuestionRepository") QuestionRepository questionRepository, UtilService utilService) {
         this.questionRepository = questionRepository;
         this.utilService = utilService;
     }
 
     @Override
-    public Question add(String question, String answer) {
+    public Question  add(String question, String answer) {
         if (question == null || question.isBlank()) {
             throw new BadRequestException(" некорректный вопрос");
         }
@@ -28,22 +28,22 @@ public class JavaQuestionService implements QuestionService {
     }
 
     @Override
-    public Question add(Question question) {
+    public Question  add(Question question) {
         return questionRepository.add(question);
     }
 
     @Override
-    public Question remove(Question question) {
+    public Question  remove(Question question) {
         return questionRepository.remove(question);
     }
 
     @Override
-    public Collection<Question> getAll() {
+    public Collection<Question>  getAll() {
         return questionRepository.getAll();
     }
 
     @Override
-    public Question getRandomQuestion() {
+    public Question  getRandomQuestion() {
         return utilService.getRandomQuestion(questionRepository.getAll());
     }
 }

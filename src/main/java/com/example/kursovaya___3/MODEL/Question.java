@@ -21,19 +21,19 @@ public class Question {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean  equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Question question1)) return false;
         return getQuestion().equals(question1.getQuestion()) && getAnswer().equals(question1.getAnswer());
     }
 
     @Override
-    public int hashCode() {
+    public int  hashCode() {
         return Objects.hash(getQuestion(), getAnswer());
     }
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "Question{" +
                 "question='" + question + '\'' +
                 ", answer='" + answer + '\'' +
